@@ -1,23 +1,26 @@
 import React, { Component } from 'react';
 import './App.css';
+import Home from './components/Home';
+import Detail from './components/Detail';
+import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
-  constructor (props) {
-    super (props);
+  constructor(props) {
+    super(props);
 
     this.filterName = this.filterName.bind(this);
 
     this.state = {
-      people :[],
+      people: [],
       name: ''
-    }  
-    
-}
-componentDidMount () {
-  this.getPeople();
-  
-}
-  getPeople () {
+    }
+
+  }
+  componentDidMount() {
+    this.getPeople();
+
+  }
+  getPeople() {
     fetch(
       'http://hp-api.herokuapp.com/api/characters'
     )
@@ -28,12 +31,12 @@ componentDidMount () {
         const characters = json;
 
 
-        let newCharacters= [] 
-          for ( let i=0; i<characters.length; i++) {
-            newCharacters[i] = {
-              ...characters[i],
-              id: i,
-            }
+        let newCharacters = []
+        for (let i = 0; i < characters.length; i++) {
+          newCharacters[i] = {
+            ...characters[i],
+            id: i,
+          }
         }
         this.setState({
           people: newCharacters
@@ -51,29 +54,10 @@ componentDidMount () {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Harry Potter Characters</h1>
-        </header>
-        <main>
-        <input type="text" onChange= {this.filterName} />
-        <ul> {this.state.people
-        .filter(item => {
-          return item.name.toLowerCase().includes(this.state.name);
-        })
-        .map (item =>{
-          return (
-            <li>
-            <div>
-             <img src={item.image} alt="foto del personaje"/>
-             <h2 >{item.name} </h2>
-             <p>{item.house}</p>
-             <p>{item.id}</p>
-            </div>
-            </li>
-          )
-        })}  
-        </ul>
-        </main>
+        <Switch>
+          <Route exact path="/" render={() => <Home people={this.state.people} name={this.state.name} onChange={this.filterName} />} />
+          <Route path="/characterdetail/:id" component={Detail} />
+        </Switch>
       </div>
     );
   }
