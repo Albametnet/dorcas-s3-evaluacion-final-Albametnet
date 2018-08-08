@@ -11,6 +11,7 @@ class App extends Component {
       people :[],
       name: ''
     }  
+    
 }
 componentDidMount () {
   this.getPeople();
@@ -25,8 +26,17 @@ componentDidMount () {
       })
       .then((json) => {
         const characters = json;
+
+
+        let newCharacters= [] 
+          for ( let i=0; i<characters.length; i++) {
+            newCharacters[i] = {
+              ...characters[i],
+              id: i,
+            }
+        }
         this.setState({
-          people: characters
+          people: newCharacters
         })
       })
   }
@@ -57,6 +67,7 @@ componentDidMount () {
              <img src={item.image} alt="foto del personaje"/>
              <h2 >{item.name} </h2>
              <p>{item.house}</p>
+             <p>{item.id}</p>
             </div>
             </li>
           )
