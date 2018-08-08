@@ -17,7 +17,7 @@ class CharacterList extends React.Component {
               <h1 className="App-title">Harry Potter Characters</h1>
             </header>
 
-            <li>
+            <li key={item.id}>
             <Link to={`/characterdetail/:id ${item.id}`} >
               <div>
               <img src={item.image} alt="foto del personaje" />

@@ -12,7 +12,8 @@ class App extends Component {
 
     this.state = {
       people: [],
-      name: ''
+      name: '',
+      casa: ''
     }
 
   }
@@ -56,7 +57,7 @@ class App extends Component {
       <div className="App">
         <Switch>
           <Route exact path="/" render={() => <Home people={this.state.people} name={this.state.name} onChange={this.filterName} />} />
-          <Route path="/characterdetail/:id" component={Detail} />
+          <Route path="/characterdetail/:id" render={() => <Detail name={this.state.name} casa= {this.state.casa}/>} />
         </Switch>
       </div>
     );
