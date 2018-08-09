@@ -27,6 +27,8 @@
 }
 .character__list-item{
   width: 200px;
+  border: 1px solid #535c68;
+  background-color: #ff7f50;
 }
 .character__list-cover{
   height: 290px;
@@ -38,3 +40,16 @@
   width: 0;
   height: 0;
 }
+.character__texts{
+height: 80px;
+text-align: center;
+}
+.character__list-name{
+font-size: 20px;
+color: #ffffff;
+}
+.character__list-house{
+  font-size: 16px;
+  color: #ffffff;
+}
+

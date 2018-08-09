@@ -18,9 +18,9 @@ class CharacterList extends React.Component {
                     <img className= "character__list-img" src={item.image} alt="foto del personaje" />
                   </div>
                 </Link>
-                <div>
-                  <h2 >{item.name} </h2>
-                  <p>{item.house}</p>
+                <div className= "character__texts">
+                  <h2 className="character__list-name" >{item.name} </h2>
+                  <p className="character__list-house">{item.house}</p>
                 </div>
               </li>
             </div>
