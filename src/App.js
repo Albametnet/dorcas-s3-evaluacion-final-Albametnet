@@ -57,7 +57,7 @@ class App extends Component {
       <div className="App">
         <Switch>
           <Route exact path="/" render={() => <Home people={this.state.people} name={this.state.name} onChange={this.filterName} />} />
-          <Route path="/characterdetail/:id" render={props => <Detail match={props.match} people={this.state.people}/>} />
+          <Route path="/detail/:id" render={props => <Detail match={props.match} people={this.state.people}/>} />
         </Switch>
       </div>
     );

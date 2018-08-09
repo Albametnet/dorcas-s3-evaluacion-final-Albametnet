@@ -12,8 +12,8 @@ class CharacterList extends React.Component {
         .map(item => {
           return (
             <div>
-              <li key={item.id}>
-                <Link to={`/characterdetail/:id ${item.id}`} match={this.match} item={item} name={item.name} house ={item.house}>
+              <li >
+                <Link to={`/detail/${item.id}`} match={this.match} item={item} name={item.name} house ={item.house}>
                   <div>
                     <img src={item.image} alt="foto del personaje" />
                   </div>
