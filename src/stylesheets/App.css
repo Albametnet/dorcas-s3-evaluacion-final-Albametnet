@@ -12,9 +12,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url('../images/darks.png');
-  background-position: center top;
-  background-repeat: repeat;
+
 }
 .filter__input{
   margin-top: 50px;
