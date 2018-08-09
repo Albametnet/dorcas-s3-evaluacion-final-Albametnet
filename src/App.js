@@ -1,25 +1,21 @@
 import React, { Component } from 'react';
-import './App.css';
+import './stylesheets/App.css';
 import Home from './components/Home';
-import Detail from './components/Detail';
+import CharacterCard from './components/CharacterCard';
 import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
   constructor(props) {
     super(props);
-
     this.filterName = this.filterName.bind(this);
-
     this.state = {
       people: [],
       name: '',
       casa: ''
     }
-
   }
   componentDidMount() {
     this.getPeople();
-
   }
   getPeople() {
     fetch(
@@ -44,20 +40,18 @@ class App extends Component {
         })
       })
   }
-
   filterName(e) {
     const myperson = e.currentTarget.value.toLowerCase();
     this.setState({
       name: myperson
     });
   }
-
   render() {
     return (
       <div className="App">
         <Switch>
           <Route exact path="/" render={() => <Home people={this.state.people} name={this.state.name} onChange={this.filterName} />} />
-          <Route path="/detail/:id" render={props => <Detail match={props.match} people={this.state.people}/>} />
+          <Route path="/charactercard/:id" render={props => <CharacterCard match={props.match} people={this.state.people}/>} />
         </Switch>
       </div>
     );

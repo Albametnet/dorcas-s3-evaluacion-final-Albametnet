@@ -13,7 +13,7 @@ class CharacterList extends React.Component {
           return (
             <div>
               <li >
-                <Link to={`/detail/${item.id}`} match={this.match} item={item} name={item.name} house ={item.house}>
+                <Link to={`/charactercard/${item.id}`} match={this.match} item={item} name={item.name} house ={item.house}>
                   <div>
                     <img src={item.image} alt="foto del personaje" />
                   </div>

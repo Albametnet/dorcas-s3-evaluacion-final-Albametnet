@@ -1,19 +1,32 @@
-// import React from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-// class CharacterCard extends React.Component {
-//   render() {
-//     return (
-//       <Link to="/" className="back-btn">Volver :)</Link>
-//         <div>
-//         {/* <img src={this.props.people[this.props.match.params.id].image} alt={this.props.people[this.props.match.params.id].image} /> */}
-//         <h2>{this.props.item.name}</h2>
-//         <p></p>
-//         <p>nacimiento</p>
-//         <p>patronus</p>
-//         <p>estado</p>
-//       </div>
-//     );
-//   }
-// }
 
-// export default CharacterCard;
+class Detail extends React.Component {
+  render() {
+
+    const myCharacter = this.props.people[this.props.match.params.id]
+
+    let state = '';
+    if (myCharacter.alive == true) {
+      state = 'Alive';
+    }
+    else {
+      state = 'Muerto 💀';
+    }
+    return (
+      <div>
+        <Link to="/" className="back-btn">Volver</Link>
+        <img src={myCharacter.image} alt="foto del personaje" />
+        <h2>{myCharacter.name}</h2>
+        <p>House: {myCharacter.house}</p>
+        <p>Birthdate: {myCharacter.dateOfBirth}</p>
+        <p>Patronus: {myCharacter.patronus}</p>
+        <p>Life state : {state}</p>
+
+      </div>
+
+    );
+  }
+}
+export default Detail;
