@@ -31,7 +31,7 @@ class Detail extends React.Component {
             <p>Life state : {state}</p>
             </div>
             <div className="return__button">
-            <Link to="/" className="back-btn">Volver</Link>
+            <Link  className="link" to="/" className="back-btn">Volver</Link>
           </div>
           </div>
           

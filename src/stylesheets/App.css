@@ -98,4 +98,11 @@ font-size: 18px;
 }
 .return__button{
   margin-top: 40px;
+  text-transform: uppercase;
+}
+.back-btn{
+  text-decoration: none;
+  color: #ffffff;
+  border: 3px solid #ffffff;
+  padding: 13px 10px 10px 10px;
 }
