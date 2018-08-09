@@ -9,11 +9,11 @@ class CharacterList extends React.Component {
         .filter(item => {
           return item.name.toLowerCase().includes(this.props.name);
         })
-        .map((item, index) => {
+        .map(item => {
           return (
             <div>
               <li key={item.id}>
-                <Link to={`/characterdetail/:id ${item.id}`}>
+                <Link to={`/characterdetail/:id ${item.id}`} match={this.match} item={item} name={item.name} house ={item.house}>
                   <div>
                     <img src={item.image} alt="foto del personaje" />
                   </div>

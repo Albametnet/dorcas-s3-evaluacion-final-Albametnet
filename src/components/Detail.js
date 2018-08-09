@@ -5,27 +5,28 @@ import {Link} from 'react-router-dom';
 
 class Detail extends React.Component {
   render() {
-    // if (this.props.people.length >= 1) {
-    //   const filtroID = this.props.match.params.id;
-    //   const otras= this.props.people;
+    
+    if (this.props.people.length >= 1) {
+      const filtroID = this.props.match.params.id;
+      const otras= this.props.people;
 
-    //   const person = otras.filter(item => {
-    //     return item.id === filtroID;        
-    //   });
+      const person = otras.filter(item => {
+        return item.id === filtroID;        
+      });
 
-    //   const myCharacter = person;
+      const myCharacter = person;
     return (
       <div>
         <Link to="/" className="back-btn">Volver</Link>
-        <p> aebdfbd
+        <p>kjbkjb 
         </p>
-        {/* <p>{myCharacter}</p> */}
+        <p>{myCharacter}</p>
         {/* <CharacterCard  item={myCharacter}/> */}
       </div>
 
     );
   }
 }
-// }
+}
 
 export default Detail;
